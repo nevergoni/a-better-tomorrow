@@ -20,6 +20,9 @@
     "react-dom": "^18",
     "react-share": "^4.4.1"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "devDependencies": {
     "@types/html2canvas": "^0.5.35",
     "@types/node": "^20",
