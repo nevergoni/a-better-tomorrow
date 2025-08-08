@@ -312,12 +312,29 @@ export function calculateHealthType(answers: number[]): HealthType {
     typeCode
   })
 
-  // 해당 유형 찾기
-  const healthType = healthTypes.find(type => type.code === typeCode)
-  
-  console.log('찾은 유형:', healthType?.name || '기본값 ABTS')
+  // 해당 유형 찾기 (정확 일치 우선)
+  const exact = healthTypes.find(type => type.code === typeCode)
+  if (exact) {
+    console.log('찾은 유형(정확 일치):', exact.name)
+    console.log('=== 점수 계산 완료 ===')
+    return exact
+  }
+
+  // 등록되지 않은 코드인 경우: 가장 가까운 유형으로 보정 (해밍 유사도 최대)
+  const similarity = (a: string, b: string) =>
+    a.split('').reduce((acc, ch, idx) => acc + (ch === b[idx] ? 1 : 0), 0)
+
+  let best: HealthType = healthTypes[0]
+  let bestScore = -1
+  for (const t of healthTypes) {
+    const sim = similarity(typeCode, t.code)
+    if (sim > bestScore) {
+      best = t
+      bestScore = sim
+    }
+  }
+
+  console.log('정확 일치 없음. 가장 가까운 유형으로 보정:', { requested: typeCode, mappedTo: best.code })
   console.log('=== 점수 계산 완료 ===')
-  
-  // 기본값으로 ABTS 반환
-  return healthType || healthTypes[0]
+  return best
 } 

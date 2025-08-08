@@ -20,8 +20,14 @@
   }
 }
 
+html {
+  /* 모바일 브라우저 자동 다크모드 강제 비활성화 */
+  color-scheme: light;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
+  /* 시스템 다크모드 상관없이 본문 텍스트는 항상 다크 컬러 */
+  color: #111827; /* tailwind gray-900 */
   background: linear-gradient(
       to bottom,
       transparent,
@@ -29,6 +35,20 @@ body {
     )
     rgb(var(--background-start-rgb));
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* iOS Safari 등에서 입력 컨트롤 텍스트가 반전되는 현상 방지 */
+input, textarea, select, button {
+  color: #111827; /* 항상 어두운 텍스트 */
+  background-color: #ffffff; /* 흰 배경 고정 */
+  -webkit-text-fill-color: #111827; /* iOS Safari 자동반전 방지 */
+  caret-color: #111827;
+}
+
+/* placeholder도 일관되게 보이도록 지정 */
+::placeholder {
+  color: #9ca3af; /* tailwind gray-400 */
+  opacity: 1;
 }
 
 /* 스크롤바 스타일링 */

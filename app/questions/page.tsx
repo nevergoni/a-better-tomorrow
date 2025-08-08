@@ -126,16 +126,16 @@ export default function QuestionsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => handleAnswer(option.value)}
-                  className={`w-full p-4 rounded-lg border-2 transition-all duration-200 hover:scale-105 ${
-                    answers[currentQuestionIndex] === option.value
-                      ? 'border-primary-600 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50'
-                  }`}
+                  className={`w-full p-4 rounded-lg border-2 transition-all duration-200 hover:scale-105 text-lg font-medium
+                    ${answers[currentQuestionIndex] === option.value
+                      ? 'border-primary-600 bg-primary-600 text-white'
+                      : 'border-gray-200 bg-white text-gray-900 hover:border-primary-300 hover:bg-primary-50'}
+                  `}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-medium">{option.label}</span>
+                    <span>{option.label}</span>
                     {answers[currentQuestionIndex] === option.value && (
-                      <CheckCircle className="h-6 w-6 text-primary-600" />
+                      <CheckCircle className="h-6 w-6 text-white" />
                     )}
                   </div>
                 </motion.button>

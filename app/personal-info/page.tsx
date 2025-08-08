@@ -129,7 +129,7 @@ export default function PersonalInfoPage() {
                   id="name"
                   value={personalInfo.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   placeholder="홍길동"
                   required
                 />
@@ -144,7 +144,7 @@ export default function PersonalInfoPage() {
                   id="birthDate"
                   value={personalInfo.birthDate}
                   onChange={(e) => handleInputChange('birthDate', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   required
                 />
               </div>
@@ -158,7 +158,7 @@ export default function PersonalInfoPage() {
                   id="phone"
                   value={personalInfo.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   placeholder="010-1234-5678"
                   required
                 />
@@ -181,7 +181,7 @@ export default function PersonalInfoPage() {
                   id="medications"
                   value={personalInfo.medications}
                   onChange={(e) => handleInputChange('medications', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   placeholder="*예시 - 타이레놀 복용중"
                   onFocus={(e) => {
                     if (e.target.placeholder.includes('*예시')) {
@@ -204,7 +204,7 @@ export default function PersonalInfoPage() {
                   id="medicalHistory"
                   value={personalInfo.medicalHistory}
                   onChange={(e) => handleInputChange('medicalHistory', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   rows={3}
                   placeholder="입원 경험이나 큰 질병이 있다면 입력해주세요"
                 />
@@ -218,7 +218,7 @@ export default function PersonalInfoPage() {
                   id="currentConditions"
                   value={personalInfo.currentConditions}
                   onChange={(e) => handleInputChange('currentConditions', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400"
                   rows={3}
                   placeholder="현재 치료 중인 질병이 있다면 입력해주세요"
                 />

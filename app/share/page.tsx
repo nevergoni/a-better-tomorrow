@@ -73,7 +73,8 @@ export default function SharePage() {
       // html2canvas 라이브러리를 사용하여 스크린샷 생성
       const html2canvas = (await import('html2canvas')).default
       const canvas = await html2canvas(resultRef.current, {
-        backgroundColor: '#f8fafc',
+        background: '#f8fafc',
+        // @ts-expect-error
         scale: 2,
         useCORS: true
       })
